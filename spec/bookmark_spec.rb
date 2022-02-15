@@ -1,11 +1,13 @@
-require_relative '../lib/bookmarks.rb'
+require 'bookmark'
 
-describe Bookmarks do
-  subject(:bookmark) { described_class.new }
+describe Bookmark do
+  describe '.all' do
+    it 'returns all bookmarks' do
+      bookmarks = Bookmark.all
 
-  it { is_expected.to respond_to(:show_list) }
-
-  it 'returns a list of saved bookmarks' do
-    expect(bookmark.show_list).to eq 'www.makers.tech, www.google.com, www.amazon.com'
+      expect(bookmarks).to include("http://www.makersacademy.com")
+      expect(bookmarks).to include("http://www.destroyallsoftware.com")
+      expect(bookmarks).to include("http://www.google.com")
+    end
   end
 end
