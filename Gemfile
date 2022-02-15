@@ -12,4 +12,5 @@ group :development, :test do
   gem 'simplecov'
   gem 'simplecov-console'
   gem 'sinatra/reloader'
+  gem 'pg'
 end
