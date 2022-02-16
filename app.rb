@@ -12,5 +12,9 @@ class BookmarkManager < Sinatra::Base
     erb :'bookmarks/index'
   end
 
+  post '/create_bookmark' do
+    
+  end
+
   run! if app_file == $0
 end
