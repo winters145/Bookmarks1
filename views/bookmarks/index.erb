@@ -1,11 +1,13 @@
 
 <ol>
   <% @bookmarks.each do |bookmark| %>
-    <li><%= bookmark %></li>
+    <li><a href=<%= bookmark.url %>><%= bookmark.title %></a></li>
   <% end %>
 </ol>
 
 <form action="/create_bookmark" method="POST">
+  Enter Title for new bookmark:
+  <input type="text" name="title">
   Enter URL for new bookmark:
   <input type="text" name="url">
   <input type="submit" value="Create Bookmark">

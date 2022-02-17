@@ -10,8 +10,9 @@ feature 'Creating bookmarks' do
   scenario 'A user can enter a new bookmark into the create bookmark form' do
     visit('/bookmarks')
     fill_in('url', with: 'www.test.com')
+    fill_in('title', with: 'Test')
     click_button('Create Bookmark')
-    expect(page).to have_content 'www.test.com'
+    expect(page).to have_link("Test", :href=>"www.test.com")
   end
 end
 
