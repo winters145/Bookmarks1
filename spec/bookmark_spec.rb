@@ -25,4 +25,15 @@ describe Bookmark do
     end
   end
 
+  describe '#delete' do
+    it 'Deletes a bookmark from the bookmark table' do
+      bookmark = Bookmark.create("Delete", "www.deleteme.com")
+      p Bookmark.all
+      p bookmark
+      Bookmark.delete(bookmark)
+      expect(Bookmark.all).not_to include bookmark
+      
+    end
+  end
+
 end

@@ -17,10 +17,15 @@ class Bookmark
 
   def self.create(title, url)
     database_connect
-    result = @connection.exec_params("INSERT INTO bookmarks(url,title) VALUES($1, $2) RETURNING id, url, title", [url, title])
+    result = @connection.exec_params("INSERT INTO bookmarks(url,title) 
+                                           VALUES($1, $2) 
+                                        RETURNING id, url, title", [url, title])
     Bookmark.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
   end
 
+  def self.delete(bookmark)
+
+  end
 
   private
 
